@@ -26,7 +26,6 @@ class traverse{
 			if($oOption->nodeId == 14){
 				error_log("FOUND... remove it");
 				unset($aOptions[$key]);
-				return;
 			}
 
 			//  Next...
