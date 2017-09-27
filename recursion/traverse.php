@@ -37,13 +37,13 @@ class traverse{
 
 	/**
 	 * Find some thing in a tree and return a bool if found
-	 * @param  object $oHaystack
-	 * @param  string $sNeedle
+	 * @param  object $oElement
+	 * @param  string $sTarget
 	 * @return boolean
 	 */
 	public function findInTree($oElement, $sTarget){
 
-		if(!empty($oElement->something) && $oHaystack->something == $sTarget){
+		if(!empty($oElement->something) && $oElement->something == $sTarget){
 			return true;
 		} else{
 			if(!empty($oElement->children)){
@@ -57,6 +57,29 @@ class traverse{
 				}
 
 				return $bFound;
+			}
+		}
+	}
+
+	/**
+	 * Find and return  a specific object
+	 * @param  object $oElement
+	 * @param  string $sTarget
+	 * @return object
+	 */
+	private function findAndReturn($oElement, $sTarget){
+		if(!empty($oElement->something) && $oElement->something == $sTarget){
+			return $oElement;
+		} else{
+			if(!empty($oElement->children)){
+				$oTargetElement = null;
+				foreach($oElement->children as $oChild){
+					$oTmp = $this->findAndReturn($oChild, $sTarget);
+					if(!empty($oTmp)){
+						$oTargetElement = $oTmpPrd;
+					}
+				}
+				return $oTargetElement;
 			}
 		}
 	}
