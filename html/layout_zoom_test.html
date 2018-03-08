@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test af zooom</title>
+</head>
+<body>
+    <style>
+
+        body{
+            padding: 50px;
+        }
+
+        .wrapper{
+            display: flex;
+            border: 1px solid grey;
+            height: 25px;
+        }
+
+        .number{
+            background-color: lime;
+            width: 50px;
+        }
+
+        .content{
+            width: calc(100% - 60px);
+            background-color: pink;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .counter{
+            min-width: 160px;
+            background-color: orange;
+        }
+
+    </style>
+
+    <div class="wrapper">
+        <div class="number">
+            666
+        </div>
+        <div class="content">
+            Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.
+        </div>
+        <div class="counter">
+            Counter
+        </div>
+    </div>
+
+</body>
+</html>
