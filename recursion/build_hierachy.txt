@@ -1,0 +1,16 @@
+// Build hierachy recursively
+private static CompanyDto BuildCompanyHierachy(CompanyPO company)
+{
+  var comp = new CompanyDto
+  {
+      CompanyId = company.Id,
+      Name = company.StrName,
+  };
+
+  if (company.ParentCompany != null)
+  {
+      comp.ParentCompany = BuildCompanyHierachy(company.ParentCompany);
+  }
+
+  return comp;
+}
